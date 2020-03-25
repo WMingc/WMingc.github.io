@@ -1,0 +1,87 @@
+
+@media screen and (min-width:600px){
+#sliderFlash{
+position:absolute;
+top:130px;
+width:1240px;
+height:650px;
+left:7%;
+top:70px;
+float:center;
+background:url(../images/juanzhou.png) no-repeat;
+background-size: 100%;
+/*bottom:40px;*/
+}
+#sliderFlash .flashBg{
+width:66%;
+height:400px;
+position:absolute;
+margin:0px;
+left:17%;
+top:105px;
+z-index: 1;
+/*margin:0 auto;*/
+
+overflow:hidden;
+}
+#sliderFlash .flashBg ul.bronze{
+width:2000%;
+height:330px;
+position:absolute;
+margin:0px;
+padding:0px;
+top:70px;
+/*position:absolute;
+/*top:15;
+left:0;*/
+}
+#sliderFlash .flashBg ul.bronze li{
+/*border:10px solid #2E324B;*/
+float:left;
+width:231px;
+height:280px;
+padding:20px;
+/*padding:20px 40px 20px 0px;*/
+color:#fff;
+}
+#sliderFlash .flashBg ul.bronze li:hover{
+border:2px dashed #aaa;
+color:#fff;
+}
+#sliderFlash .flashBg ul.bronze li img{
+width:220px;
+height:310px;
+}
+#sliderFlash .button_left{
+width:30px;
+height:60px;
+position:absolute;
+top:280px;
+left:14%;
+z-index: 1;
+}
+#sliderFlash .button_left img{
+width:30px;
+height:60px;
+}
+#sliderFlash .button_right img{
+width:30px;
+height:60px;
+}
+#sliderFlash .button_right{
+width:30px;
+height:60px;
+position:absolute;
+top:280px;
+right:14%;
+z-index: 1;
+}
+#sliderFlash .button_left:hover{
+background:url(../images/qianxleft1.png) no-repeat;
+background-size:100%;
+}
+#sliderFlash .button_right:hover{
+background:url(../images/qianxr1.png) no-repeat;
+background-size:100%;
+}
+}

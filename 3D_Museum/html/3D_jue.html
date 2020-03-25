@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>线上博物馆</title>
+    <link href="../css/global.css" rel="stylesheet" type="text/css">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/museum4.15.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div id="container-mobile">
+      <center><p></br></br>鉴于网站内部有动态交互界面</br>需要鼠标交互操作</br></br>为了您更好的操作体验</br>请在电脑端打开网页</br>建议使用火狐浏览器</br>电脑端用户请尽量维持屏幕宽度</br></br>感谢您的谅解</p></center>
+    </div>
+    <div id="container-background-3D">
+      <div id="headerBg">
+        <div id="header">
+          
+          <div id="logo"><img src="../images/logo.png" width="100%" alt="logo" title="logo"></div>
+          <div id="header-menu">
+            <ul id="menu">
+              
+              <li class="header-menu-about"><a href="about.html">关于我们</a></li>
+              <li class="header-menu-visual"><a href="design.html">创意设计</a></li>
+              
+              <li class="header-menu-home"><a>唤醒文物</a>
+              <ul>
+                <li><a href="interact.html">青铜器</a></li>
+                <li><a>玉器</a></li>
+                <li><a>瓷器</a></li>
+              </ul>
+            </li>
+            <li class="header-menu-home"><a href="../index.html">首页</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="webgl">
+      <div class="texture-back">
+        <a href="../html/interact.html"><img src ="../images/back.png" /></a>
+      </div>
+
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 1360px; height: 500px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title"> 初次打开建议全屏操作</div>
+      </div>
+    </div>
+  </div>
+    <div id="end">
+      <div id="footer"></br><center><font size="1">Copyright © 2019 Open FIESTA 线上博物馆 All rights reserved.</br>
+        </font></center>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
