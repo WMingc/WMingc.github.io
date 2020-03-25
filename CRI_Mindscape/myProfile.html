@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Test of bars mapping</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 	<link rel="shortcut icon" type="image/png" href="/Icons/favicon/favicon.png" /> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/modernizr.js"></script>
+   	<link rel="stylesheet" href="css/reset.css"> 
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+
+
+		}
+		#container {
+			background: #fff;
+			position: absolute;
+			right: 7%;
+			width: 93%;
+			height: 100%;
+			z-index: 0;
+		}	
+		.my{
+			position: relative;
+			left:100px;
+			top:200px;
+			width: 200px;
+			height: 300px;
+		}
+		.my img{
+			width: 200px;
+			height: 200px;
+		}
+		.intro {
+			position: relative;
+			font-size: 3.6rem;
+			font-family: "Sintony", sans-serif;
+			color: #000;
+		}
+	</style>
+
+
+</head>
+<body>
+		<nav class="cd-vertical-nav">
+		<ul>
+			<li><a href="home_bars.html"><span class="label">Map</span></a></li>
+			<li><a href="virtual.html"><span class="label">Virtual</span></a></li>
+			<li><a href="#" class="active"><span class="label">Profile</span></a></li>
+		</ul>
+	</nav>
+
+	<div id="container">
+		<div class="my">
+			<img src="images/me.png" alt="" /> 
+			<div class="intro"><p></br><b>Hello Louis!</b></p></div>
+		</div>
+	</div>
+
+
+</body>
+</html>
