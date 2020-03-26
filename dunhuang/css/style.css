@@ -1,0 +1,46 @@
+
+body {
+	background: #fff;
+	color: #000;
+	font-weight: 500;
+	font-size: 10;
+}
+
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ccc;
+}
+
+
+.mainheader{
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+.mainheader h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 24;
+	line-height: 1.3;
+}
+
+
+.content {
+	padding-top: 10px;
+	font-size: 8;
+}
+
+.content a {
+	display: inline-block;
+	margin: 5px;
+	padding: 7px 11px;
+	outline: none;
+	border: 1px solid #333;
+	font-weight: 400;
+}
