@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Map and events</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" type="image/png" href="/Icons/favicon/favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+
+   <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+	<script type="text/javascript" src="js/leaflet-sidebar.js" ></script>
+	<script type="text/javascript" src="js/bars.js"></script>
+
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/modernizr.js"></script>
+   	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/formevents.js"></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			position: absolute;
+			right: 7%;
+			width: 93%;
+			height: 100%;
+			z-index: 0;
+		}
+		#sidebar-tabs {
+			background-color: green;
+		}
+		span.msg,
+		span.choose {
+		  color: #555;
+		  padding: 5px 0 10px;
+		  display: inherit
+		}
+		.container {
+		  text-align: center
+
+		}
+
+		/*Styling Selectbox*/
+		.dropdown {
+		  width: 300px;
+		  display: inline-block;
+		  background-color: #fff;
+		  border-radius: 5px;
+		  box-shadow: 0 0 2px rgb(204, 204, 204);
+		  transition: all .5s ease;
+		  position: relative;
+		  font-size: 14px;
+		  color: #474747;
+		  height: 100%;
+		  text-align: left
+		}
+		.dropdown .select {
+		    cursor: pointer;
+		    display: block;
+		    padding: 10px
+		}
+		.dropdown .select > i {
+		    font-size: 13px;
+		    color: #888;
+		    cursor: pointer;
+		    transition: all .3s ease-in-out;
+		    float: right;
+		    line-height: 20px
+		}
+		.dropdown:hover {
+		    box-shadow: 0 0 4px rgb(204, 204, 204)
+		}
+		.dropdown:active {
+		    background-color: #f8f8f8
+		}
+		.dropdown.active:hover,
+		.dropdown.active {
+		    box-shadow: 0 0 4px rgb(204, 204, 204);
+		    border-radius: 5px 5px 0 0;
+		    background-color: #f8f8f8
+		}
+		.dropdown.active .select > i {
+		    transform: rotate(-90deg)
+		}
+		.dropdown .dropdown-menu {
+		    position: absolute;
+		    background-color: #fff;
+		    width: 100%;
+		    left: 0;
+		    margin-top: 1px;
+		    box-shadow: 0 1px 2px rgb(204, 204, 204);
+		    border-radius: 0 1px 5px 5px;
+		    overflow: hidden;
+		    display: none;
+		    max-height: 144px;
+		    overflow-y: auto;
+		    z-index: 9
+		}
+		.dropdown .dropdown-menu li {
+		    padding: 10px;
+		    transition: all .2s ease-in-out;
+		    cursor: pointer
+		} 
+		.dropdown .dropdown-menu {
+		    padding: 0;
+		    list-style: none
+		}
+		.dropdown .dropdown-menu li:hover {
+		    background-color: #f2f2f2
+		}
+		.dropdown .dropdown-menu li:active {
+		    background-color: #e2e2e2
+		}
+
+Resources
+	</style>
+
+
+</head>
+<body>
+	<nav class="cd-vertical-nav">
+		<ul>
+			<li><a href="#" class="active"><span class="label">Map</span></a></li>
+			<li><a href="virtual.html"><span class="label">Virtual</span></a></li>
+			<li><a href="profile.html"><span class="label">Profile</span></a></li>
+		</ul>
+	</nav>
+
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs" class="center"> <i class="em em-arrow_down_small" class="center"></i>
+            <ul role="tablist"> 
+                <li><a href="#home" role="tab"><i class="em em-calendar"></i><i class="fa fa-bars"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="em em-phone"></i><i class="fa fa-user"></i></a></li>
+                <li><a href="#messages" role="tab"><i class="em em-mailbox_with_mail"></i></a></li>
+                
+            </ul>
+
+            <ul role="tablist">
+                <li><a href="#settings" role="tab"><i class="em em-gear"></i><i class="fa fa-gear"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <i class="em em-angry"></i>
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Meet big brothers and sisters
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <p></br>Choose your next activity or event</p>
+
+          
+
+                <p class="lorem">
+	                <div id="formEvents" class="container">
+	    				<span class="choose"></br>5 events this week in your city : Paris </br></br>1 <i class="em em-speaking_head_in_silhouette"></i> - 2<i class="em em-movie_camera"></i> - 2<i class="em em-runner"></i></span>
+	  
+					      <label for="pet-select">Choose a first event:</label>
+
+						<select id="pet-select">
+						    <option value="">--Please choose an option--</option>
+						    <option value="conf_broca">Conference: with Dr Broca Roland</option>
+						    <option value="puirsuitOfHappiness">Movie at UCG Les Halles: Pursuit of Happiness</option>
+							<option value="desGensContre">Movie at Megarama: Des gens contre les autres</option>
+							<option value="desGensContre">Cardio session at Park Fitness</option>
+							<option value="hamster"><i class="em em-martial_arts_uniform"></i>Training with Franck Roppers</option>
+						</select>
+					  
+					  <span class="msg"></span>
+					</div>
+				</p>
+
+                <p class="lorem"></br>Those events are organized by our teams, and with the support of our partners </br> <i class="em em-athletic_shoe"></i> <i class="em em-large_orange_diamond"></i> <i class="em em-coffee"></i> <i class="em em-cinema"></i> (logos)</p>
+            </div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Hotlines<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <div class="my">
+					
+					<div><p></br><b>Do you think you need an immediate help? Some people are on the other side ready to hear you</br></br></b>
+					<i class="em em-phone"></i> <a href="tel:+33142962626">01 42 96 26 26</a> - SOS Amitité</br></br>
+					<i class="em em-phone"></i> <a href="tel:+33144933074">32 24 or 01 44 93 30 74</a> - Fil Santés Jeunes</br></br>
+					<i class="em em-phone"></i> <a href="tel:+33143460062">01 43 46 00 62</a> - Phare Enfants – Parents</br></br>
+
+					</p></div>
+				</div>
+            </div>
+
+            <div class="sidebar-pane" id="messages">
+                <h1 class="sidebar-header">Messages<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            	<p> You have 1 message(s).</br></br></p>
+            	<p><img src="images/message.png" alt="" width="330px" > <a href="virtualChat.html"><i class="em em-email" class="margin-top"></i></a></p>
+            	
+
+            </div>
+
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="sidebar-map"></div>
+
+   <!--script src="../js/leaflet-sidebar.js"></script-->
+<script>
+
+	//Create the layer of bars, this is a front-end database
+	var bars = L.layerGroup();
+	var gyms = L.layerGroup();
+	var users = L.layerGroup();
+
+		//Create a yellow Icon for Therapists
+	var yellowIcon = new L.Icon({
+	  iconUrl: 'images/place3.png',
+	  iconSize: [40, 40],
+	  iconAnchor: [12, 41],
+	  popupAnchor: [1, -34],
+	  
+	});
+
+	var bffIconHappy = new L.Icon({
+	  iconUrl: 'images/bff2.png',
+	  iconSize: [50, 50],
+	  //iconAnchor: [12, 41],
+	  //popupAnchor: [1, -34],
+	  
+	});
+
+	var bffIconNeutral = new L.Icon({
+	  iconUrl: 'images/bff3.png',
+	  iconSize: [50, 50],
+	  //iconAnchor: [12, 41],
+	  //popupAnchor: [1, -34],
+	  
+	});
+
+
+	
+    L.marker([48.8699, 2.30421], {icon: yellowIcon}).bindPopup('<b>Au Bureau Paris 8</b></br>66 Rue Pierre Charron, 75008 Paris').addTo(bars);
+    L.marker([48.8651, 2.32827], {icon: yellowIcon}).bindPopup('<b>Bar 228</b></br>228 Rue de Rivoli, 75011 Paris').addTo(bars);
+    L.marker([48.8545, 2.33814], {icon: yellowIcon}).bindPopup('<b>Bar Etna</b></br>33 Rue Mazarine, 75006 Paris').addTo(bars);
+    L.marker([48.851, 2.32713], {icon: yellowIcon}).bindPopup('<b>Bar Joséphine </b></br>45 Boulevard Raspail, 75006 Paris').addTo(bars);
+    L.marker([48.8568, 2.32783], {icon: yellowIcon}).bindPopup('<b>Bar Signature</b> </br>5-7 Rue de Montalembert, 75007 Paris').addTo(bars);
+    L.marker([48.858, 2.34635], {icon: yellowIcon}).bindPopup('<b><a href="blog.html">Dernier Bar avant la Fin du Monde</a> </b> </br>19 Avenue Victoria, 75001 Paris').addTo(bars);
+    L.marker([48.851, 2.33861], {icon: yellowIcon}).bindPopup('<b>Le 10 BAR Odéon </b></br>10 Rue de Odéon, 75006 Paris').addTo(bars);
+    L.marker([48.8513, 2.33934], {icon: yellowIcon}).bindPopup('<b>Monsieur le Zinc - Odéon</b></br>13 Rue Monsieur le Prince, 75006 Paris').addTo(bars);
+    L.marker([48.8531, 2.33791], {icon: yellowIcon}).bindPopup('<b>O Brothers</b></br> 13 Rue Grégoire de Tours, 75006 Paris').addTo(bars);
+    L.marker([48.8521, 2.33459], {icon: yellowIcon}).bindPopup('<b>Tiger</b></br>13 Rue Princesse, 75006 Paris').addTo(bars);
+    L.marker([48.853747, 2.3656614], {icon: yellowIcon}).bindPopup('<b>Keep Cool Paris 4 Bastille</b></br>12 Rue du Petit Musc, 75004 Paris</br> Closed at 11pm</br>01 70 93 94 49').addTo(gyms);
+    L.marker([48.8465, 2.380390000000034], {icon: yellowIcon}).bindPopup('<b>Fitness Park Paris - Diderot</b></br>160-62 Boulevard Diderot, 75012 Paris</br> Closed at 11pm</br>07 87 55 02 05').addTo(gyms);
+    L.marker([48.8529, 2.370390000000043], {icon: yellowIcon}).bindPopup('<b>CMG Sports Club Pure Bastille</b></br>4 Place de la Bastille, 75012 Paris</br> Closed at 10pm</br>07 87 55 02 05').addTo(gyms);
+ 
+
+ //Create a grey Icon for Therapists
+ var therapIcon = new L.Icon({
+    iconUrl: 'images/therapist3.png',
+    iconSize: [40, 40],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34]
+    });
+ //Create the layer of therapist, this is a front-end database
+ var therapists = L.layerGroup();
+ L.marker([48.8506, 2.330410000000029], {icon: therapIcon}).bindPopup('<b>Doctor Velea Dan </b></br>75 Rue de Rennes, 75006 Paris</br>06 85 25 21 63').addTo(therapists),
+ L.marker([48.8437934, 2.328337], {icon: therapIcon}).bindPopup('<b>Anne Sénéquier</b></br>7 Rue Stanislas, 75006 Paris</br>06 10 79 77 04').addTo(therapists);
+ L.marker([48.8591265, 2.300876], {icon: therapIcon}).bindPopup('<b>Docteur Broca Roland</b></br>29 Avenue Rapp, 75007 Paris</br> 06 82 67 52 36').addTo(therapists);
+ L.marker([48.8653, 2.356999999999971], {icon: therapIcon}).bindPopup('<b>Dr Michèle WAGMAN - Pédopsychiatre</b></br>11 Rue Réaumur, 75003 Paris</br> 01 42 72 70 76').addTo(therapists);
+ L.marker([48.852, 2.3280099999999493], {icon: therapIcon}).bindPopup('<b>Lepastier Samuel</b></br>2 Rue Récamier, 75007 Paris</br> 01 40 65 15 20').addTo(therapists);
+ 
+ 
+
+
+ L.marker([48.8499299, 2.33715], {icon: bffIconHappy}).bindPopup('<b>Harvey S. - User_218</b></br> Mood: calm ').addTo(gyms);
+ L.marker([48.86, 2.33715], {icon: bffIconNeutral}).bindPopup('<b>Donna P. - User_211</b></br> Mood: Happy ').addTo(gyms);
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+
+	//Create the grayscale and streets layers, it will be the first display
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+
+	var map = L.map('map', {
+		center: [48.8545, 2.33814],
+		zoom: 12,
+		layers: [grayscale,streets, bars,gyms]
+		//if we want to show therapists as well in initial display, add therapists to layers
+	});
+
+
+	var baseLayers = {
+		"Grayscale": grayscale,
+		"Streets": streets
+	};
+
+	var overlays = {
+		"bars": bars,
+		"therapists" : therapists,
+		"gyms" : gyms
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+
+	//Create green icon for user's location
+	var meIcon = new L.Icon({
+	  iconUrl: 'images/me3.png',
+	  //shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+	  iconSize: [30, 30],
+	  iconAnchor: [12, 41],
+	  popupAnchor: [1, -34],
+	  //shadowSize: [41, 41]
+	});
+
+	function onLocationFound(e) {
+		var radius = e.accuracy / 2;
+
+
+		L.marker(e.latlng, {icon: meIcon}).addTo(map)
+		.bindPopup('<b>Hello</b></br> Louis').openPopup();
+	}
+
+
+	function onLocationError(e) {
+		alert(e.message);
+	}
+
+	map.on('locationfound', onLocationFound);
+	map.on('locationerror', onLocationError);
+
+	map.locate({setView: true, maxZoom: 13});
+
+
+	var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+	</script>
+
+
+</body>
+</html>

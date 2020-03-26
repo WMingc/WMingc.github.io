@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Test of bars mapping</title>
+	<title>Virtual Mindscape</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,36 +14,82 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/modernizr.js"></script>
-   	<link rel="stylesheet" href="css/reset.css"> 
+   	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/virtual.css">
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		#container {
-			background: #fff;
-			position: absolute;
-			right: 7%;
-			width: 93%;
-			height: 100%;
-			z-index: 0;
-		}	
-	</style>
+<style >
+	
+#container {
+	margin: 50px 280px;
+	position: center;
+	width: 50%;
+	height: 35%;
+	background-color: white;
+	color: black;
+	font-size: 1.5em;
 
+}
+.btn{
+	font-size: 1em;
+	color:white;
+}
+
+</style>
 
 </head>
 <body>
 		<nav class="cd-vertical-nav">
-		<ul>
-			<li><a href="home_bars.html"><span class="label">Map</span></a></li>
-			<li><a href="#" class="active"><span class="label">Virtual</span></a></li>
-			<li><a href="myProfile.html"><span class="label">Profile</span></a></li>
-		</ul>
-	</nav>
+			<ul>
+				<li><a href="home_bars.html"><span class="label">Map</span></a></li>
+				<li><a href="#" class="active"><span class="label">Virtual</span></a></li>
+				<li><a href="profile.html" ><span class="label">Profile</span></a></li>
+			</ul>
+		</nav>
 
-	<div id="container">
+	<div id="container" width="50%" class="center">
+		<div class="container-1">
+		</div>
+		  <div class="container-1">
+		      <span>Hi Louis, Welcome to Virtual Yard</span>
+		  </div>
+
+		  <div class="container-2">
+		    <div class="btn btn-two" onclick=location.href="virtualChat.html">
+		      <span>Chat with <i class="em em-female-astronaut"></i> and <i class="em em-face_with_cowboy_hat"></i> </span>
+		    </div>
+		</div>
+		<div class="container-2">
+		    <div>5 <i class="em em-female-astronaut"></i> and <i class="em em-face_with_cowboy_hat"></i> are online </div>
+		  </div>
+
+		 <div class="container-3">
+		    <div class="btn btn-two" onclick=location.href="maintenance.html">
+		      <span>Chat with Mindsperts<i class="em em-male-doctor"> </i> <i class="em em-female-doctor"></i> </span>
+		    </div>
+		  </div>
+
+		<div class="container-3">
+		      <span>3 <i class="em em-male-doctor"></i> and <i class="em em-female-doctor"> </i> are online</span>
+		    </div>
+		 
+
+		  <div class="container-4">
+		    <div class="btn btn-two" onclick=location.href="maintenance.html">
+		      <span>Listen to and share <i class="em em-musical_note"></i></span>
+		    </div>
+		  </div>
+
+		  <div class="container-5">
+		    <div class="btn btn-two" onclick=location.href="maintenance.html">
+		      <span>Play Games with BFF <i class="em em-video_game"></i> <i class="em em-game_die"></i></span>
+		    </div>
+		  </div>
+
+		 
+
+			
 
 	</div>
 

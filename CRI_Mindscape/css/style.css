@@ -200,7 +200,7 @@ Vertical navigation
     top: 8px;
     height: 16px;
     width: 16px;
-    background: url(../images/cd-nav-icons2.svg) no-repeat;
+    background: url("https://mfannane.github.io/cd-nav-icons2.svg") no-repeat;
     -webkit-transform: translateX(-50%) scale(0);
     -moz-transform: translateX(-50%) scale(0);
     -ms-transform: translateX(-50%) scale(0);

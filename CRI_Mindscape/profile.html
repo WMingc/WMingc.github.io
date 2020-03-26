@@ -14,8 +14,9 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/modernizr.js"></script>
-   	<link rel="stylesheet" href="css/reset.css"> 
+   	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+
 
 	<style>
 		html, body {
@@ -42,6 +43,7 @@
 		.my img{
 			width: 200px;
 			height: 200px;
+			position: left;
 		}
 		.intro {
 			position: relative;
@@ -49,24 +51,29 @@
 			font-family: "Sintony", sans-serif;
 			color: #000;
 		}
+		.mood{
+			position: absolute; /*or fixed*/
+    		right: 100px;
+    		top: 50px;
+		}
 	</style>
 
 
 </head>
 <body>
 		<nav class="cd-vertical-nav">
-		<ul>
-			<li><a href="home_bars.html"><span class="label">Map</span></a></li>
-			<li><a href="virtual.html"><span class="label">Virtual</span></a></li>
-			<li><a href="#" class="active"><span class="label">Profile</span></a></li>
-		</ul>
-	</nav>
+			<ul>
+				<li><a href="home_bars.html"><span class="label">Map</span></a></li>
+				<li><a href="virtual.html"><span class="label">Virtual</span></a></li>
+				<li><a href="#" class="active"><span class="label">Profile</span></a></li>
+			</ul>
+		</nav>
 
 	<div id="container">
-		<div class="my">
-			<img src="images/me.png" alt="" /> 
-			<div class="intro"><p></br><b>Hello Louis!</b></p></div>
-		</div>
+
+			<img src="images/profile.png" alt="" width="103%" />
+
+
 	</div>
 
 
