@@ -1,7 +1,7 @@
 .img1{
 	position: relative;
 	float: left;
-	margin:60px 80px;
+	margin:80px 100px;
 	left:0px;
 }
 .img1 img{
@@ -14,8 +14,8 @@
 	position: absolute;
 	float: left;
 	margin:0px;
-	top:70px;
-	left:30px;
+	top:90px;
+	left:40px;
 
 }
 .back img{
