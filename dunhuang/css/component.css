@@ -7,7 +7,6 @@
 
 .grid a {
 	float: left;
-	/*max-width: 250px;*/
 	width: 33%;
 	color: #333;
 }
@@ -24,7 +23,6 @@
 	display: block;
 	width: 100%;
 	opacity: 0.7;
-	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
 
@@ -45,7 +43,6 @@
 	letter-spacing: 1px;
 	font-weight: 300;
 	font-size: 130%;
-	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
 }
 
@@ -53,13 +50,11 @@
 	padding: 0 20px;
 	color: #aaa;
 	font-weight: 300;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
 }
 
 .grid figcaption h2,
 .grid figcaption p {
-	-webkit-transform: translateY(50px);
 	transform: translateY(50px);
 }
 
@@ -70,7 +65,6 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: bold;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
 }
 
@@ -78,7 +72,6 @@
 .grid figcaption h2,
 .grid figcaption p,
 .grid figure button {
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
@@ -102,7 +95,6 @@
 
 .grid a:hover figcaption h2,
 .grid a:hover figcaption p {
-	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
 
@@ -123,14 +115,12 @@
 	background: transparent;
 	color: #fff;
 	opacity: 0;
-	-webkit-transform: translateY(-50%) translateX(-50%) scale(0.25);
 	transform: translateY(-50%) translateX(-50%) scale(0.25);
 }
 
 .demo-1 .grid a:hover figure button,
 .demo-3 .grid a:hover figure button {
 	opacity: 1;
-	-webkit-transform: translateY(-50%) translateX(-50%) scale(1);
 	transform: translateY(-50%) translateX(-50%) scale(1);
 }
 
@@ -143,7 +133,6 @@
 }
 
 .demo-2 .grid figcaption p {
-	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
 }
 
@@ -155,14 +144,11 @@
 	background: #fff;
 	color: #333;
 	font-weight: 300;
-	-webkit-transform: translateY(100%);
 	transform: translateY(100%);
 }
 
 .demo-2 .grid a:hover figure button {
-	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
-	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
 
@@ -170,16 +156,12 @@
 .demo-2 .grid figcaption p,
 .demo-3 .grid figcaption h2,
 .demo-3 .grid figcaption p {
-	-webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.115, 1); /* older webkit */
-	-webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);
 	timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);
 }
 
 .demo-2 .grid a:hover figcaption p,
 .demo-3 .grid a:hover figcaption p {
-	-webkit-transition-delay: 0s;
 	transition-delay: 0s;
-	-webkit-transition-duration: 0.1s;
 	transition-duration: 0.1s;
 }
 
@@ -192,7 +174,6 @@
 }
 
 .demo-3 .grid a:hover figcaption h2 {
-	-webkit-transform: translateY(5px);
 	transform: translateY(5px);
 }
 
@@ -231,7 +212,6 @@
 
 	.grid figcaption h2 {
 		margin-bottom: 0px;
-		-webkit-transform: translateY(30px);
 		transform: translateY(30px);
 	}
 
