@@ -18,7 +18,6 @@ a:hover {
 .container {
 	position: relative;
 	margin: auto;
-	/*max-width: 900px;*/
 	text-align: center;
 }
 
@@ -58,7 +57,7 @@ a:hover {
 	left:10%;
 }
 .masaiImg img{
-	
+
 	width: 100%;
 	height: 100%;
 }
