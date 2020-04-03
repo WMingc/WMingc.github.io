@@ -1,117 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>XX市网格化社会治理大数据监测</title>
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script src="js/echarts.js"></script>
-<script src="js/jquery-3.3.1.min.js"></script>
+  <meta charset="UTF-8">
+  <title>XX市网格化社会治理大数据监测</title>
+  <link href="css/layout.css" rel="stylesheet" type="text/css">
+  <script src="js/echarts.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
-<video id="videoBg" src="video/background.mp4" autoplay loop></video>
-<div id="black"></div>
-<div id="cover"><div id="title"><span>XX市网格化社会治理大数据监测</span></div></div>
-<div id="main">
-  <div id="top">
-  </div>
-  <div id="left1">
-    <div class="info" id="info1"><span id="grid"></span><span id="gridNum"></span></div>
-    <div class="info" id="info2"><span id="grid"></span><span id="online"></span></div>
-    <div class="info" id="info3"><span id="grid"></span><span id="mile"></span></div>
-    <div class="blocks" id="range"></div>
-  </div>
-  <div id="bottom">
-    <div id="left2">
-      <div class="blocks" id="rate">
-        <div id="block1"></div>
-        <div id="block2"></div>
+  <video id="videoBg" src="video/background.mp4" autoplay="autoplay" loop="loop"></video>
+  <div id="black"></div>
+  <div id="cover"><div id="title"><span>XX市网格化社会治理大数据监测</span></div></div>
+  <div id="main">
+    <div id="top">
+    </div>
+    <div id="left1">
+      <div class="info" id="info1"><span id="grid"></span><span id="gridNum"></span></div>
+      <div class="info" id="info2"><span id="grid"></span><span id="online"></span></div>
+      <div class="info" id="info3"><span id="grid"></span><span id="mile"></span></div>
+      <div class="blocks" id="range"></div>
+    </div>
+    <div id="bottom">
+      <div id="left2">
+        <div class="blocks" id="rate">
+          <div id="block1"></div>
+          <div id="block2"></div>
+        </div>
+        <div class="blocks" id="age"></div>
       </div>
-      <div class="blocks" id="age"></div>
-    </div>
-    <div id="mid">
-      <div id="dataRange"></div>
-      <div id="user"></div>
-      <div class="blocks" id="serviceMode"></div>
-      <div class="blocks" id="CommunityRange"></div>
-    </div>
-    <div id="right">
-      <div class="blocks" id="inspect"></div>
-      <div class="blocks" id="record"></div>
-      <div id="table"></div>
+      <div id="mid">
+        <div id="dataRange"></div>
+        <div id="user"></div>
+        <div class="blocks" id="serviceMode"></div>
+        <div class="blocks" id="CommunityRange"></div>
+      </div>
+      <div id="right">
+        <div class="blocks" id="inspect"></div>
+        <div class="blocks" id="record"></div>
+        <div id="table"></div>
+      </div>
     </div>
   </div>
-</div>
-<div id="decoLeft1">
-  <div class="compo"></div>
-  <div class="compo"></div>
-  <div class="compo"></div>
-</div>
-<div id="decoRight1">
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-</div>
-<div id="decoLeft2">
-  <div class="compo"></div>
-  <div class="compo"></div>
-  <div class="compo"></div>
-</div>
-<div id="decoRight2">
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-</div>
-<div id="decoLeft3">
-  <div class="compo"></div>
-  <div class="compo"></div>
-  <div class="compo"></div>
-</div>
-<div id="decoRight3">
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-</div>
-<div id="decoLeft4">
-  <div class="compo"></div>
-  <div class="compo"></div>
-  <div class="compo"></div>
-</div>
-<div id="decoRight4">
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-</div>
-<div id="decoLeft5">
-  <div class="compo"></div>
-  <div class="compo"></div>
-  <div class="compo"></div>
-</div>
-<div id="decoRight5">
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-</div>
-<div id="decoLeft6">
-  <div class="compo"></div>
-  <div class="compo"></div>
-  <div class="compo"></div>
-</div>
-<div id="decoRight6">
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-  <div class="compo0"></div>
-</div>
-<script type="text/javascript" src="js/base.js"></script>
-<script type="text/javascript" src="js/block1.js"></script>
-<script type="text/javascript" src="js/block2.js"></script>
-<script type="text/javascript" src="js/age.js"></script>
-<script type="text/javascript" src="js/dataRange.js"></script>
-<script type="text/javascript" src="js/user.js"></script>
-<script type="text/javascript" src="js/serviceMode.js"></script>
-<script type="text/javascript" src="js/CommunityRange.js"></script>
-<script type="text/javascript" src="js/record.js"></script>
-<script type="text/javascript" src="js/range.js"></script>
-<script type="text/javascript" src="js/inspect.js"></script>
+  <div id="decoLeft1">
+    <div class="compo"></div>
+    <div class="compo"></div>
+    <div class="compo"></div>
+  </div>
+  <div id="decoRight1">
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+  </div>
+  <div id="decoLeft2">
+    <div class="compo"></div>
+    <div class="compo"></div>
+    <div class="compo"></div>
+  </div>
+  <div id="decoRight2">
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+  </div>
+  <div id="decoLeft3">
+    <div class="compo"></div>
+    <div class="compo"></div>
+    <div class="compo"></div>
+  </div>
+  <div id="decoRight3">
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+  </div>
+  <div id="decoLeft4">
+    <div class="compo"></div>
+    <div class="compo"></div>
+    <div class="compo"></div>
+  </div>
+  <div id="decoRight4">
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+  </div>
+  <div id="decoLeft5">
+    <div class="compo"></div>
+    <div class="compo"></div>
+    <div class="compo"></div>
+  </div>
+  <div id="decoRight5">
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+  </div>
+  <div id="decoLeft6">
+    <div class="compo"></div>
+    <div class="compo"></div>
+    <div class="compo"></div>
+  </div>
+  <div id="decoRight6">
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+    <div class="compo0"></div>
+  </div>
+  <script type="text/javascript" src="js/base.js"></script>
+  <script type="text/javascript" src="js/block1.js"></script>
+  <script type="text/javascript" src="js/block2.js"></script>
+  <script type="text/javascript" src="js/age.js"></script>
+  <script type="text/javascript" src="js/dataRange.js"></script>
+  <script type="text/javascript" src="js/user.js"></script>
+  <script type="text/javascript" src="js/serviceMode.js"></script>
+  <script type="text/javascript" src="js/CommunityRange.js"></script>
+  <script type="text/javascript" src="js/record.js"></script>
+  <script type="text/javascript" src="js/range.js"></script>
+  <script type="text/javascript" src="js/inspect.js"></script>
 </body>
 </html>
