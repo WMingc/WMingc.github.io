@@ -14,13 +14,17 @@
 			<a href="masaike.html">色彩马赛克</a>
 			<a href="cluster_index.html">配色聚类分析</a>
 			<a>传统色搭配</a>
-			<a href="enhance_index.html"">颜色增强复原</a>
+			<a href="enhance_index.html">颜色增强复原</a>
 		</nav>
 	</header>
 	<div class = "imgMatch">
+		<p>壁画颜色使用情况，圆半径越大说明该颜色在壁画中使用频次越高。</p>
 		<img src="img/match.png"/>
 	</div>
-
+	<div class = "imgMatch">
+	</br>
+		<p>壁画颜色搭配，鼠标悬浮颜色查看相关搭配情况。</p>
+	</div>
 	<script>
 
 		var id =["暗龙胆紫",
@@ -65,8 +69,8 @@
 			                 console.log( chords );
 
 			                 var width  = 700;
-			                 var height = 700;
-		var innerRadius = width/2 * 0.75;//内圆半径
+			                 var height = 550;
+		var innerRadius = width/2 * 0.6;//内圆半径
 		var outerRadius = innerRadius * 1.1;//外圆半径
 		
 		var fill =["#22202e", "#322f3b", "#1e131d", "#3e3841", "#1c2938", "#873d24","#71361d","#8c4b31","#945833","#be7e4a","#aa6a4c","#773d31","#66462a","#826b48","#5e665b","#6e8b74","#869d9d","#8076a3","#74759b","#894e54","#a7535a","#c0c4c3","#a4aca7"];
@@ -75,12 +79,12 @@
 		.attr("width", width)
 		.attr("height", height)
 		.append("g")
-		.attr("transform", "translate(" + width/2 + "," + height/2 + ")");
+		.attr("transform", "translate(" + 3*width/5 + "," + height/2 + ")");
 
 		var outer_arc =  d3.svg.arc()
 		.innerRadius(innerRadius)
 		.outerRadius(outerRadius);
-		
+		//绘制节点 弧
 		svg.append("g").selectAll("path")
 		.data(groups)
 		.enter()
@@ -101,7 +105,7 @@
         };
     }
 
-
+//弧文字
     svg.append("g").selectAll("text")
     .data(groups)
     .enter()
@@ -119,10 +123,10 @@
     .text(function(d){
     	return d.name;
     });
-
+//弦生成器
     var inner_chord =  d3.svg.chord()
     .radius(innerRadius);
-    svg.append("g")
+    svg.append("g")//绘制连线 弦
     .attr("class", "chord")
     .selectAll("path")
     .data(chords)
@@ -149,7 +153,7 @@
 			var svg2 = d3.select("body").append("svg").attr("height",height).attr("width",width);
 			svg2.append("g")
 
-			.attr("transform", "translate("+width/2+","+height/2+")")
+			.attr("transform", "translate("+2*width/5+","+height/2+")")
 			.call(ch)
 			.style("stroke-width",0)
 			.style("opacity", 0.4)
@@ -169,8 +173,14 @@
 
 
 </script>
+
+<div class = "imgMatch">
+	</br>
+		<p>壁画颜色搭配，单行展示一幅壁画图中颜色搭配分布。</p>
+	</div>
 <div class = "imgMatch2">
 	<img src="img/match1.png"/>
+	
 </div>
 <div class = "imgMatch3">
 	<img src="img/match2.png"/>
