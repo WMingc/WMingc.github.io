@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,52 +9,73 @@
 </head>
 
 <body>
-	<header class="mainheader">
-		<h1>Mingchun Wang</h1><p><span style="color:#ea840b;">数据可视化项目</span>｜<span style="color:#3B6AFF;">互联网产品策划</span>｜<span style="color:#777;">其他技术相关项目</span></p>
-		
-	</header>
+	<div class="header">
+		<h1 class="header-logo">Mingchun Wang</h1>
+		<p class="header-des">
+			<span class="header-text" style="color:#ea840b;">数据可视化项目</span>
+			<span class="header-text" style="color:#3B6AFF;">互联网产品策划</span>
+			<span class="header-text" style="color:#aaa;">其他技术相关项目</span>
+		</p>
+	</div>
 
-	<div class="container">
+	<div class="pages">
 
-		<div id="main-page">
-			<div id="main">
-				<img src="../images/dunhuang_show1.png" width="100%" height="100%" align="left"/>     
-				
+		<div class="pages-wrapper">
+			<div class="pages-hd">
+				<img class="pages-hd-img" src="../images/dunhuang_show1.png" />
 			</div>
-			<div class="back"><a href = "../index.html"><img src="../images/back.png" alt="Image"/></a></div>
-			<div id="maintext2">
-				<div id="pages">
-					<h2>敦煌壁画可视化</h2>
-					
-				</br>
+			<div class="pages-bd">
+				<div class="back">
+					<a href="../index.html">
+						<img class="back-svg" src="../images/back.svg" alt="back" />
+					</a>
+				</div>
+				<div class="pages-main">
+					<div class="project">
+						<div class="project-hd">
+							<h2 class="project-title">敦煌壁画可视化</h2>
+							<span class="project-subtitle">
+								壁画色彩视觉搭配分析
+							</span>
+							</br>
+							<p class="project-des">该项目是本人数据可视化课程小组作业。</br></br>
+								<b>个人工作：</b></br></br>
+								1、参与图像数据筛选分析，可视化设计。</br>
+								2、针对壁画的主要颜色搭配可视化(D3.js/Processing/P5.js)。</br>
+								3、将组内其他同学可视化结果制作可交互网页版(XHTML/CSS/JavaScript)。
+							</p>
+						</div>
+						<div class="project-bd">
+							<div class="project-subtext">
+								<h3 class="project-title">颜色搭配可视化</h3>
+								<p>
+									提取出每张壁画中主要的5个颜色，将其按照方差和一定范围内浮动的方式与传统中国颜色匹配对应。</br>
+									根据颜色在每张图中占比和所有图中出现频次制作对应可视化图。</br>
+									制作可交互弦图呈现壁画画师使用颜色搭配情况。
+								</p>
+							</div>
 
-				<p>该项目是本人数据可视化课程小组作业</br>
-				个人工作：针对壁画的主要颜色搭配可视化(D3.js/Processing/P5.js)以及将组内其他同学可视化结果编写图制作可交互网页版(XHTML/CSS/JavaScript)</p>
-			</br>
-			<span style="color:#aaa;">
-				<h3>颜色搭配可视化</h3><p>
-				提取出每张壁画中主要的5个颜色，将其按照方差和一定范围内浮动的方式与传统中国颜色匹配对应。</br>根据颜色在每张图中占比和所有图中出现频次制作对应可视化图。</br>制作可交互弦图呈现壁画画师使用颜色搭配情况。</p>
-			</span>
-		</br>
-		<p>点击进入网页：<a href = "https://wmingc.github.io/dunhuang/colorSchemes.html" target="_blank"><u>https://wmingc.github.io/dunhuang/colorSchemes.html</u></a></p>
-	</br>
-	<img src="../images/dunhuang_show2.png" width="100%" height="100%" />				
-	<img src="../images/dunhuang_show3.png" width="100%" height="100%"/>
-	
-	
-	
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="end">
-	<div id="footer"></br><center><font size="1">Copyright © 2020 Mingchun W. All rights reserved.</font></center></div>
-</div>
-</div>
-</div>
+							<img class="project-bd-img" src="../images/dunhuang_show2.png" />
+							<img class="project-bd-img" src="../images/dunhuang_show3.png" />
+							<div class="project-qrcode">
+								<span class="project-text">点击进入网页：<a
+										href="https://wmingc.github.io/dunhuang/colorSchemes.html"
+										target="_blank"><u>https://wmingc.github.io/dunhuang/colorSchemes.html</u></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-
+	<div class="footer">
+		<div class="copyright">
+			<p class="copyright-text">Copyright © 2020 Mingchun W. All rights reserved.</p>
+		</div>
+	</div>
 
 </body>
+
 </html>
