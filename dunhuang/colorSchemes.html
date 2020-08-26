@@ -4,19 +4,20 @@
 	<meta charset="utf-8">  
 	<title>敦煌壁画可视化-配色</title> 
 	<link rel="stylesheet" type="text/css" href="css/style.css" /> 
-</head> 
-<body>  
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/viz.v1.1.2.min.js"></script>
-	<header class="mainheader">
-		<h1>敦煌壁画可视化</h1>	
-		<nav class="content">
-			<a href="masaike.html">色彩马赛克</a>
-			<a href="cluster_index.html">配色聚类分析</a>
-			<a>传统色搭配</a>
-			<a href="enhance_index.html">颜色增强复原</a>
+</head> 
+<body>  
+	<div class="header">
+		<h1 class="header-logo">敦煌壁画可视化</h1>	
+		<nav class="header-nav">
+			<a class="header-nav-item" href="masaike.html">色彩马赛克</a>
+			<a class="header-nav-item" href="cluster_index.html">配色聚类分析</a>
+			<span class="header-nav-item header-nav-item--selected">传统色搭配</span>
+			<a class="header-nav-item"  href="enhance_index.html">颜色增强复原</a>
 		</nav>
-	</header>
+	</div>
+	<div class="pages">
 	<div class = "imgMatch">
 		<p>壁画颜色使用情况，圆半径越大说明该颜色在壁画中使用频次越高。</p>
 		<img src="img/match.png"/>
@@ -185,6 +186,7 @@
 <div class = "imgMatch3">
 	<img src="img/match2.png"/>
 
+</div>
 </div>
 </body>  
 </html>  

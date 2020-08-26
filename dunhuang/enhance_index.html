@@ -14,16 +14,18 @@
 </head>
 <body>
 
-	<div class="container">
-		<header class="mainheader">
-			<h1>敦煌壁画可视化</h1>	
-			<nav class="content">
-				<a href="masaike.html">色彩马赛克</a>
-				<a href="cluster_index.html">配色聚类分析</a>
-				<a href="colorSchemes.html">传统色搭配</a>
-				<a>颜色增强复原</a>
-			</nav>
-		</header>
+
+		<div class="header">
+			<h1 class="header-logo">敦煌壁画可视化</h1>	
+		<nav class="header-nav">
+			<a class="header-nav-item" href="masaike.html">色彩马赛克</a>
+			<a class="header-nav-item" href="cluster_index.html">配色聚类分析</a>
+		    <a class="header-nav-item"  href="colorSchemes.html">传统色搭配</a>
+			<span class="header-nav-item header-nav-item--selected">颜色增强复原</span>
+		</nav>
+	</div>
+
+<div class="pages">
 		<div class="cocoen">
 			<img src="img/after.png" alt="">
 			<img src="img/before.png" alt="">
@@ -53,8 +55,7 @@
 		<div class ="enhanceImg2">
 			<img src="img/enhance_after4.png" alt="">
 		</div>
-	</div>
-
+</div>
 	<script src="js/cocoen.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function(){

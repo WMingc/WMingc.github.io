@@ -12,19 +12,19 @@ a {
 a:hover {
 	color: #ccc;
 }
-.container {
+/* .container {
 	position: relative;
 	margin: auto;
 	text-align: center;
-}
+} */
 
-.mainheader{
+.header{
 	margin: 0 auto;
 	padding: 20px;
 	text-align: center;
 }
 
-.mainheader h1 {
+.header-logo {
 	margin: 0;
 	font-weight: 300;
 	font-size: 24;
@@ -32,18 +32,24 @@ a:hover {
 }
 
 
-.content {
+.header-nav {
 	padding-top: 10px;
 	font-size: 8;
 }
 
-.content a {
+.header-nav-item{
 	display: inline-block;
 	margin: 5px;
 	padding: 7px 11px;
 	outline: none;
-	border: 1px solid #333;
+	color:#333;
+	/* border: 1px solid #333; */
 	font-weight: 400;
+	/* cursor: pointer; */
+}
+.header-nav-item--selected{
+	color:#aa1925;
+	font-weight: 700;
 }
 
 

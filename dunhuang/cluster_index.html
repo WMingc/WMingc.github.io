@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="demo-1 no-js">
+<html>
 <head> 
 	<meta charset="utf-8">  
 	<title>敦煌壁画可视化-聚类</title>
@@ -8,15 +8,16 @@
 	<script src="js/snap.svg-min.js"></script>
 </head>
 <body>
-	<header class="mainheader">
-		<h1>敦煌壁画可视化</h1>	
-		<nav class="content">
-			<a href="masaike.html">色彩马赛克</a>
-			<a>配色聚类分析</a>
-			<a href="colorSchemes.html">传统色搭配</a>
-			<a href="enhance_index.html">颜色增强复原</a>
+	<div class="header">
+		<h1 class="header-logo">敦煌壁画可视化</h1>	
+		<nav class="header-nav">
+			<a class="header-nav-item" href="masaike.html">色彩马赛克</a>
+			<span class="header-nav-item header-nav-item--selected" >配色聚类分析</span>
+			<a class="header-nav-item"  href="colorSchemes.html">传统色搭配</a>
+			<a class="header-nav-item"  href="enhance_index.html">颜色增强复原</a>
 		</nav>
-	</header>
+	</div>
+	<div class="pages">
 	<section id="grid" class="grid clearfix">
 		<a href="html/cluster1.html" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
 			<figure>
@@ -110,7 +111,7 @@
 			</figure>
 		</a>
 	</section>
-
+</div>
 
 	<script>
 		(function() {
