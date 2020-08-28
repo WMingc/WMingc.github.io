@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>敦煌壁画可视化-配色</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="js/d3.v3.min.js"></script>
+	<script src="js/viz.v1.1.2.min.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<h1 class="header-logo">敦煌壁画可视化</h1>
+		<nav class="header-nav">
+			<a class="header-nav-item" href="mosaic.html">色彩马赛克</a>
+			<a class="header-nav-item" href="clusterbox.html">配色聚类分析</a>
+			<span class="header-nav-item header-nav-item--selected">传统色搭配</span>
+			<a class="header-nav-item" href="enhance.html">颜色增强复原</a>
+		</nav>
+	</div>
+	<div class="pages">
+		<div class="pages-wrapper">
+			<div class="pages-palettebox">
+				<div class="pages-palettebox-item">
+					<div class="pages-palettebox-row1">
+						<img src="img/palette_circle.jpg" />
+					</div>
+					<p class="pages-palettebox-text">壁画颜色使用情况，圆半径越大说明该颜色在壁画中使用频次越高。</p>
+				</div>
+				<div class="pages-palettebox-item">
+					<div class="pages-palettebox-row2">
+					<div class="palette-interact">
+					</div>
+					<div class="palette-detail">
+					</div>
+				</div>
+					<p class="pages-palettebox-text">壁画颜色搭配，鼠标悬浮颜色查看相关搭配情况。</p>
+				</div>
+				<script>
+
+					var id = ["暗龙胆紫",
+						"龙葵紫", "鸟梅紫", "剑锋紫", "鸽蓝", "淡豆沙", "丁香棕", "淡土黄",
+						"淡咖啡", "淡赭", "火泥棕", "橡树棕", "驼色", "龟背黄", "田螺绿", "瓦松绿", "虾壳青", "藤萝紫", "螺甸紫", "烟红", "满江红", "月影白", "冰山蓝"];
+
+					var count = [
+						[0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+						[0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+						[1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 4, 3, 0, 0, 0, 0, 1, 0, 1, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
+						[0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 3, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0],
+						[1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 2, 0],
+						[1, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 1, 0, 0, 0],
+						[1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[1, 0, 0, 4, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 2, 0, 1, 0],
+						[0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+						[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+						[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
+						[0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2, 0, 0, 1, 0, 0, 0, 0, 2, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 0],
+						[1, 1, 0, 1, 0, 1, 0, 1, 3, 0, 2, 0, 0, 1, 0, 1, 0, 1, 0, 2, 0, 0, 0],
+						[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+
+					];
+
+					var chord_layout = d3.layout.chord()
+						.padding(0.08)//弦之间的距离
+						.sortSubgroups(d3.descending)//排序
+						.matrix(count);
+
+					var groups = chord_layout.groups();
+					var chords = chord_layout.chords();
+					console.log(groups);
+					console.log(chords);
+
+					var width = 500;
+					var height = 600;
+					var innerRadius = width / 2 * 0.8;//内圆半径
+					var outerRadius = innerRadius * 1.1;//外圆半径
+
+					var fill = ["#22202e", "#322f3b", "#1e131d", "#3e3841", "#1c2938", "#873d24", "#71361d", "#8c4b31", "#945833", "#be7e4a", "#aa6a4c", "#773d31", "#66462a", "#826b48", "#5e665b", "#6e8b74", "#869d9d", "#8076a3", "#74759b", "#894e54", "#a7535a", "#c0c4c3", "#a4aca7"];
+
+					var svg = d3.select(".palette-interact").append("svg")
+						.attr("width", width)
+						.attr("height", height)
+						.append("g")
+						.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+					var outer_arc = d3.svg.arc()
+						.innerRadius(innerRadius)
+						.outerRadius(outerRadius);
+					//绘制节点 弧
+					svg.append("g").selectAll("path")
+						.data(groups)
+						.enter()
+						.append("path")
+						.style("fill", function (d) { return fill[d.index] })//
+						.style("stroke", function (d) { return fill[d.index]; })
+						.attr("d", outer_arc)
+						.on("mouseover", fade(0.1))
+						.on("mouseout", fade(0.8));
+					function fade(opacity) {
+						return function (g, i) {
+							svg.selectAll(".chord path")
+								.filter(function (d) {
+									return d.source.index != i && d.target.index != i;
+								})
+								.transition()
+								.style("opacity", opacity);// 不透明度
+						};
+					}
+
+					//弧文字
+					svg.append("g").selectAll("text")
+						.data(groups)
+						.enter()
+						.append("text")
+						.each(function (d, i) {
+							d.angle = (d.startAngle + d.endAngle) / 2;
+							d.name = id[i];
+						})
+						.attr("dy", ".35em")
+						.attr("font-size", 12)
+						.attr("transform", function (d) {
+							return "rotate(" + (d.angle * 180 / Math.PI) + ")" +
+								"translate(-25," + -1.0 * (outerRadius + 25) + ")";
+						})
+						.text(function (d) {
+							return d.name;
+						});
+					//弦生成器
+					var inner_chord = d3.svg.chord()
+						.radius(innerRadius);
+					svg.append("g")//绘制连线 弦
+						.attr("class", "chord")
+						.selectAll("path")
+						.data(chords)
+						.enter()
+						.append("path")
+						.attr("d", d3.svg.chord()
+							.radius(innerRadius))
+						.style("fill", function (d) {
+							return fill[d.target.index];
+						})
+						.style("stroke-width", 0)
+						.style("opacity", 0.6);// 不透明
+
+
+					var data = [];
+					count.forEach(function (r, i) { r.forEach(function (c, j) { if (r != 0 && c != 0) data.push([i, j, c]) }) });
+					var ch = viz.ch().data(data).padding(0.08)
+						.innerRadius(innerRadius)
+						.outerRadius(outerRadius)
+						.label(function (d) { return "" })
+						.startAngle(1.5 * Math.PI)
+						.fill(function (d) { return fill[d]; });
+
+					var svg2 = d3.select(".palette-detail").append("svg").attr("height", height).attr("width", width);
+					svg2.append("g")
+
+						.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+						.call(ch)
+						.style("stroke-width", 0)
+						.style("opacity", 0.4)
+						.on("mouseover", fade2(1))// 为路径添加鼠标事件
+						.on("mouseout", fade2(0.4));
+
+					function fade2(opacity) {
+						return function (g, i) {
+							svg2.selectAll("g")
+								.transition()
+
+								.style("opacity", opacity);// 不透明度
+						};
+					}
+
+					d3.select(self.frameElement).style("height", height + "px").style("width", width + "px");
+
+
+				</script>
+
+				<div class="pages-palettebox-item">
+					<div class="pages-palettebox-row2">
+						<img src="img/palette_macth1.jpg" />
+						<img src="img/palette_macth2.jpg" />
+					</div>
+
+					<p class="pages-palettebox-text">壁画颜色搭配，单行展示一幅壁画图中颜色搭配分布。</p>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="copyright">
+			<p class="copyright-text">Copyright © 2019-2020 可视化课程 Group4 All rights reserved.</p>
+		</div>
+	</div>
+</body>
+
+</html>

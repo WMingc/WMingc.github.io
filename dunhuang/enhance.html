@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>敦煌壁画可视化-增强</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="css/cocoen.min.css">
+	<style>
+		.cocoen {
+			width: 80vw;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="header">
+		<h1 class="header-logo">敦煌壁画可视化</h1>
+		<nav class="header-nav">
+			<a class="header-nav-item" href="mosaic.html">色彩马赛克</a>
+			<a class="header-nav-item" href="clusterbox.html">配色聚类分析</a>
+			<a class="header-nav-item" href="palette.html">传统色搭配</a>
+			<span class="header-nav-item header-nav-item--selected">颜色增强复原</span>
+		</nav>
+	</div>
+
+	<div class="pages">
+		<div class="pages-wrapper">
+			<div class="pages-enhancebox">
+			<div class="pages-enhancebox-hd">
+				<div class="pages-enhancebox-show cocoen">
+					<img src="img/after.png" alt="">
+					<img src="img/before.png" alt="">
+				</div>
+				<p class="pages-enhancebox-text">拖拽轴左右移动查看增强效果。</p>
+				</div>
+			</div>
+			<div class="pages-enhancebox-bd">
+				<div class="pages-enhancebox">
+					<div class="pages-enhancebox-row">
+						<img src="img/before_cluster.jpg" alt="">
+						<img src="img/after_cluster.jpg" alt="">
+					</div>
+				</div>
+				<div class="pages-enhancebox-row">
+					<img src="img/enhance_before1.jpg" alt="">
+					<img src="img/enhance_after1.png" alt="">
+				</div>
+				<div class="pages-enhancebox-row">
+					<img src="img/enhance_before3.png" alt="">
+					<img src="img/enhance_after3.png" alt="">
+				</div>
+				<div class="pages-enhancebox-row">
+					<img src="img/enhance_before4.jpg" alt="">
+					<img src="img/enhance_after4.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="footer">
+		<div class="copyright">
+			<p class="copyright-text">Copyright © 2019-2020 可视化课程 Group4 All rights reserved.</p>
+		</div>
+	</div>
+	<script src="js/cocoen.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			new Cocoen();
+		});
+	</script>
+</body>
+
+</html>

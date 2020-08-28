@@ -13,15 +13,10 @@ a {
 a:hover {
 	color: #ccc;
 }
-/* .container {
-	position: relative;
-	margin: auto;
-	text-align: center;
-} */
 
 .header{
 	margin: 0 auto;
-	padding: 20px;
+	padding: 30px 0 20px;
 	text-align: center;
 }
 
@@ -49,7 +44,7 @@ a:hover {
 	/* cursor: pointer; */
 }
 .header-nav-item--selected{
-	color:#982f38;
+	color:#9e1621;
 	font-weight: 700;
 }
 
@@ -61,7 +56,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #982f38;
+    background-color: #9e1621;
   }
   
   .copyright {
