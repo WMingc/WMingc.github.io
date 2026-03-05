@@ -1,0 +1,5 @@
+# GitHub Pages 配置
+# 静态站点构建设置
+title: Ming's Portfolio
+description: 数据可视化项目与互联网产品策划
+theme: jekyll-theme-minimal
