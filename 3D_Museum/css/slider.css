@@ -1,0 +1,45 @@
+@media screen and (min-width:600px){/* and (max-width:900px){
+
+/*@media screen and (min-width:900px)*/
+#bannerimg{
+position: relative;
+width:100%;
+/*left:5%;*/
+float:left;
+overflow:hidden;
+/*border-radius:15px 15px 15px 15px;*/
+}
+#bannerimg .anyslider{
+top:100px;
+width:90%;
+margin:0px;
+padding:0px;
+}
+.forward{
+position:absolute;
+top:250px;
+display:block;
+right:20px;
+}
+.back{
+position:absolute;
+top:250px;
+display:block;
+left:20px;
+}
+#bannerimg .slider{
+float:center;
+height:630px;
+margin:0px;
+padding:0px;
+}
+#bannerimg .slider ul{
+list-style: none;
+margin:0px;
+padding:0px;
+}
+#bannerimg .slider ul li{
+margin:0px;
+padding:0px;
+}
+}
