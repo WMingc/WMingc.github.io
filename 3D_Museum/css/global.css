@@ -1,0 +1,50 @@
+@media screen and (max-width:600px)
+{
+html,body{
+width:100%;
+height:600px;
+margin:0px;
+padding:0px;
+font-family:"Microsoft YaHei",微软雅黑, Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#000;
+line-height:24px;
+/*background-color:#f5f5f5;*/
+}
+}
+@media screen and (min-width:600px) {/*and (max-width:900px){
+/*}*/
+/*@media screen and (min-width:900px)*/
+/*{*/
+html,body{
+	width:100%;
+	height:100%;
+	min-width:1000px;
+	margin:0px;
+	padding:0px;
+	font-family:"Microsoft YaHei",微软雅黑, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#000;
+	line-height:24px;
+	/*background-color:#f5f5f5;*/
+}
+a{
+	text-decoration:none;
+}
+a:link,a:visited{
+	color:#586B8F;
+}
+a:hover,a:active{
+	color:#586B8F;
+}
+img{
+	border:0px;
+}
+.highlight{
+	font-weight:bold;
+	color:#000;
+}
+li{
+	list-style-type:none;
+	}
+}

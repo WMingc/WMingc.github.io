@@ -1,0 +1,545 @@
+@media screen and (max-width:600px)
+{
+	
+	#container,#header,#header-menu{
+		position: absolute;
+		height:0px;
+		width:0px;
+		top:0px;
+		margin:0px;
+	padding:0px;
+	visibility:hidden;
+	}
+	#container-background{
+		position: absolute;
+		height:0px;
+		width:0px;
+		top:0px;
+		margin:0px;
+	padding:0px;
+		visibility: hidden;
+	}
+	#logo{
+		position: absolute;
+		height:0px;
+		width:0px;
+		top:0px;
+		margin:0px;
+	padding:0px;
+		visibility: hidden;
+	}
+	#list-right,#banner,#bannerimg,#slider{
+		position: absolute;
+		height:0px;
+		top:0px;
+		width:0px;
+		margin:0px;
+	padding:0px;
+		visibility: hidden;
+	}
+	#main-page-index,#main,#intro,.icon,#end{
+		position: absolute;
+		height:0px;
+		width:0px;
+		top:0px;
+		margin:0px;
+	padding:0px;
+		visibility: hidden;
+	}
+	#container-mobile
+	{
+		top:0px;
+		left:0px;
+			position:absolute;
+	float:left;
+		width:100%; /*约为1349px*/
+	height:100%;
+		z-index: 100;
+	background:url(../images/indeximg.png) ;
+	}
+	#container-mobile p
+	{
+		font-weight:200;
+	line-height:30px;
+	font-size:15px;
+	color:#fff;
+	}
+}
+@media screen and (min-width:600px) and (max-width:900px){
+#container-mobile
+	{
+		position:absolute;
+		weight=0px;
+height=0px;
+		float:left;
+		top:0px;
+		margin:0px;
+	padding:0px;
+	display:none;
+		z-index: -100;
+	}
+	
+#container{
+	width:100%; /*约为1349px*/
+	height:100%;
+	z-index:1;
+}
+#container-background{
+	height:100%;
+	background-color:#f5f5f5;
+	z-index:1;
+}
+#header{
+	width:100%;
+	float:left;
+	height:120px;
+	background-color:#fadc4a;
+	z-index:1;
+}
+#logo{
+	position:absolute;
+    width:160px;
+	height:32px;
+	z-index:10;
+	left:10%;
+	top:45px;
+	z-index:1;
+}
+#header-menu{
+	position: absolute;
+	/*width: 1106px;/*页面82%改成具体数据，可以解决窗口缩放引起的位置变形*/
+	width:1106px;
+	height: 50px;
+	/*background: #fef0b1;为了便于查看区域范围大小，故而加个背景色
+/*	left: 243px;*/
+	left:10%;
+	right:10%;
+	top: 70px;
+}
+#header-menu ul{
+	margin:12.5px;
+	padding:0px;
+	right:10%;
+	postion:absolute;
+} 
+#header-menu ul li{
+	display:block;
+	text-align:center;
+/*	font-weight:bold;*/
+	font-size:16px;
+	color:#fff;
+	width:140px; 
+	float:right; 
+	list-style:none; 
+} 
+#header-menu ul li a{
+	cursor:pointer;
+	color:#000/*504a2c;*/
+}
+#header-menu ul li a:hover{
+	color:#fff;
+} 
+#banner{
+	position:relative;
+	width:100%;
+	height:480px;
+	top:40px;
+	float:left;
+}
+#banner2{
+	position:relative;
+	width:1349px;
+	height:280px;
+	top:40px;
+	float:left;
+}
+#list-right{
+	width:75%;
+	
+	position:relative;
+	float:left;
+	padding:20px 30px;
+	margin: 22px 22px 22px 20px;
+	background-color:#fff;
+	border-radius:15px 15px 15px 15px;
+/*
+	border-left: 1px solid #ECECEC;
+	border-right: 1px solid #ECECEC;
+*/
+}
+#main-page{	
+/*	text-align: center;*/
+  	position:relative;
+	width:100%;
+	height:360px;
+	top:30px;
+	float:left;
+	background-color:#383A3F;
+	
+}
+#main-page-index{	
+/*	text-align: center;*/
+  	position:relative;
+	width:100%;
+	height:430px;
+	top:50px;
+/*	margin:0px,0px,50px,0px;*/
+	float:left;
+	background:url(../images/indeximg.png) ;
+	
+}
+#main-page2{	
+/*	text-align: center;*/
+  	position:relative;
+	width:100%;
+	height:240px;
+	top:20px;
+	float:left;
+		background-color:#383A3F;
+}
+#main{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	float: left;
+	height:360px;
+	top:20px;
+}
+#main2{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	float: left;
+	height:160px;
+	top:20px;
+}
+#main3{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	float: left;
+	height:300px;
+	top:20px;
+}
+	#main p{
+	font-weight:200;
+	line-height:30px;
+	font-size:15px;
+	color:#fff;	
+	}
+	#main2 p,#main3 p{
+	font-weight:200;
+	line-height:30px;
+	font-size:14px;
+	color:#fff;
+} 
+#intro{
+		position:relative;
+	width:90%;
+	height:260px;
+	top:50px;
+	left:5%;
+	float:left;
+	margin: 0px 0px 80px 0px;
+		background-color:#f5f5f5;
+}
+.icon{
+	position:relative;
+	float:left;
+	width:18%;
+	height:220px;
+	padding: 0px 0px 50px 6%;
+	margin: 60px 0px 40px 0px;
+}
+
+.blank{
+	position:relative;
+	float:left;
+	width:200px;
+	height:220px;
+}
+.icon2{
+	position:relative;
+	float:left;
+	width:15%;
+	height:220px;
+	padding: 0px 0px 0px 15%;
+	margin: 20px 0px 0px 0px;
+}
+.icon p{
+	color:#000;
+	font-size:14px;
+/*	font-weight:bold; */
+	line-height:30px;   
+}
+#intro2{
+		position:relative;
+	width:100%;
+	height:370px;
+	top:60px;
+	float:left;
+	margin: 0px 0px 60px 0px;
+		background-color:#f5f5f5;
+}
+#intro3{
+		position:relative;
+	width:92%;
+	left:4%;
+	height:450px;
+	top:30px;
+	float:left;
+	
+	margin: 0px 0px 30px 0px;
+		background:url(../images/H5img.png) no-repeat;
+}
+#end{
+		position:relative;
+	width:100%;
+	height:100px;
+	top:30px;
+	float:left;
+/*	margin: 0px 0px 50px 0px;*/
+		background-color:#fadc4a;
+}
+}
+
+@media screen and (min-width:900px)
+
+{
+	
+#container-mobile
+	{
+		position:absolute;
+		weight=0px;
+height=0px;
+		float:left;
+		top:0px;
+		margin:0px;
+	padding:0px;
+	display:none;
+		z-index: -100;
+	}
+	
+#container{
+	width:100%; /*约为1349px*/
+	height:100%;
+	z-index:1;
+}
+#container-background{
+	height:100%;
+	background-color:#f5f5f5;
+	z-index:1;
+}
+#header{
+	width:100%;
+	float:left;
+	height:120px;
+	background-color:#fadc4a;
+	z-index:1;
+}
+#logo{
+	position:absolute;
+    width:160px;
+	height:32px;
+	z-index:10;
+	left:10%;
+	top:45px;
+	z-index:1;
+}
+#header-menu{
+	position: absolute;
+	/*width: 1106px;/*页面82%改成具体数据，可以解决窗口缩放引起的位置变形*/
+	width:1106px;
+	height: 50px;
+	/*background: #fef0b1;为了便于查看区域范围大小，故而加个背景色
+/*	left: 243px;*/
+	left:10%;
+	right:10%;
+	top: 70px;
+}
+#header-menu ul{
+	margin:12.5px;
+	padding:0px;
+	right:10%;
+	postion:absolute;
+} 
+#header-menu ul li{
+	display:block;
+	text-align:center;
+/*	font-weight:bold;*/
+	font-size:16px;
+	color:#fff;
+	width:140px; 
+	float:right; 
+	list-style:none; 
+} 
+#header-menu ul li a{
+	cursor:pointer;
+	color:#000/*504a2c;*/
+}
+#header-menu ul li a:hover{
+	color:#fff;
+} 
+#banner{
+	position:relative;
+	width:100%;
+	height:480px;
+	top:40px;
+	float:left;
+}
+#banner2{
+	position:relative;
+	width:1349px;
+	height:280px;
+	top:40px;
+	float:left;
+}
+#list-right{
+	width:75%;
+	
+	position:relative;
+	float:left;
+	padding:20px 30px;
+	margin: 22px 22px 22px 20px;
+	background-color:#fff;
+	border-radius:15px 15px 15px 15px;
+/*
+	border-left: 1px solid #ECECEC;
+	border-right: 1px solid #ECECEC;
+*/
+}
+#main-page{	
+/*	text-align: center;*/
+  	position:relative;
+	width:100%;
+	height:360px;
+	top:30px;
+	float:left;
+	background-color:#383A3F;
+	
+}
+#main-page-index{	
+/*	text-align: center;*/
+  	position:relative;
+	width:100%;
+	height:430px;
+	top:50px;
+/*	margin:0px,0px,50px,0px;*/
+	float:left;
+	background:url(../images/indeximg.png) ;
+	
+}
+#main-page2{	
+/*	text-align: center;*/
+  	position:relative;
+	width:100%;
+	height:240px;
+	top:20px;
+	float:left;
+		background-color:#383A3F;
+}
+#main{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	float: left;
+	height:360px;
+	top:20px;
+}
+#main2{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	float: left;
+	height:160px;
+	top:20px;
+}
+#main3{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	float: left;
+	height:300px;
+	top:20px;
+}
+#main p{
+	font-weight:200;
+	line-height:30px;
+	font-size:15px;
+	color:#fff;	
+	}
+	#main2 p,#main3 p{
+	font-weight:200;
+	line-height:30px;
+	font-size:14px;
+	color:#fff;
+} 
+#intro{
+		position:relative;
+	width:90%;
+	height:260px;
+	top:50px;
+	left:5%;
+	float:left;
+	margin: 0px 0px 80px 0px;
+		background-color:#f5f5f5;
+}
+.icon{
+	position:relative;
+	float:left;
+	width:18%;
+	height:220px;
+	padding: 0px 0px 50px 6%;
+	margin: 60px 0px 40px 0px;
+}
+
+.blank{
+	position:relative;
+	float:left;
+	width:200px;
+	height:220px;
+}
+.icon2{
+	position:relative;
+	float:left;
+	width:15%;
+	height:220px;
+	padding: 0px 0px 0px 15%;
+	margin: 20px 0px 0px 0px;
+}
+.icon p{
+	color:#000;
+	font-size:14px;
+/*	font-weight:bold; */
+	line-height:30px;   
+}
+#intro2{
+		position:relative;
+	width:100%;
+	height:370px;
+	top:60px;
+	float:left;
+	margin: 0px 0px 60px 0px;
+		background-color:#f5f5f5;
+}
+#intro3{
+		position:relative;
+	width:92%;
+	left:4%;
+	height:450px;
+	top:30px;
+	float:left;
+	
+	margin: 0px 0px 30px 0px;
+		background:url(../images/H5img.png) no-repeat;
+}
+#end{
+		position:relative;
+	width:100%;
+	height:100px;
+	top:30px;
+	float:left;
+/*	margin: 0px 0px 50px 0px;*/
+		background-color:#fadc4a;
+}
+}

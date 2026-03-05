@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+<style>
+body {
+	margin: 0 auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	font-family: "STXihei", 华文细黑, Helvetica, Arial, sans-serif;
+}
+#chart {
+	transform: translate(15%, 0);
+}
+rect.bordered {
+	stroke: #E6E6E6;
+	stroke-width: 2px;
+}
+text.mono {
+	font-size: 9pt;
+	font-family: Consolas, courier;
+	fill: #777;
+}
+text.mono2 {
+	font-size: 10pt;
+	font-family: Consolas, courier;
+	fill: #333;
+}
+text.axis-workshrink {
+	fill: #000;
+}
+text.axis-nonworkshrink {
+	fill: #ccc;
+}
+text.axis-workdiastole {
+	fill: #000;
+}
+text.axis-nonworkdiastole {
+	fill: #ccc;
+}
+</style>
+</head>
+	
+<body>
+<div id="chart"></div>
+<div id="dataset-picker"> </div>
+<script src="../js/d3.v3.min.js"></script> 
+<script src="../js/heatmap.js"></script>
+	<script language="javascript" type="text/javascript" src="../js/noCode.js"></script>
+
+</body>
+</html>
