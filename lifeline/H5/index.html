@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LIFELINE 现代病诊所</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 minimum-scale=1 user-scalable=no">
+<script type="text/javascript" src="js/noCode.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jweixin-1.0.0.js"></script>
+<!--
+	作者：匿名用户
+链接：https://www.zhihu.com/question/37391337/answer/93803430
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+//for weixin share
+		function weixinShare(type){
+			var appid = 'wxc87c106733e11828';
+			var img_url = "http://tg-image.b0.upaiyun.com/tgou2/img2/tgou_logo2.png";
+			var link = window.location.href;
+			var desc = '发送给好友的描述';
+			var title = '微信分享demo';
+			var shareFriend = function () {
+				WeixinJSBridge.invoke('sendAppMessage',{
+					"appid":appid,
+					"img_url":img_url,
+					"img_width":"640",
+					"img_height":"640",
+					"link":link,
+					"desc":desc,
+					"title":title
+				},function(res) {
+					console.log(res)
+				})
+			}
+			var shareTimeline = function () {
+				WeixinJSBridge.invoke('shareTimeline',{
+					"appid":appid,
+					"img_url":img_url,
+					"img_width":"640",
+					"img_height":"640",
+					"link":link,
+					"desc":desc,
+					"title":title
+				},function(res) {
+					console.log(res)
+				});
+			}
+			if(type == 'friend'){
+				return shareFriend;
+			}else if(type == 'timeline'){
+				return shareTimeline;
+			}
+		}
+
+		var shareFriend = weixinShare('friend');
+		var shareTimeline = weixinShare('timeline');
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			WeixinJSBridge.on('menu:share:appmessage', function(argv){
+				shareFriend();
+			});
+			WeixinJSBridge.on('menu:share:timeline', function(argv){
+				shareTimeline();
+			});
+		}, false);
+-->
+<!--
+<script>
+	wx.config({
+		debug: false,
+		appId: 'wxfb95e4025a5d4614',
+		timestamp: '1498633007',
+		nonceStr: 'tnZJBsdrUo88MFiB',
+		signature: 'cae67a0a883822e1087cba091321b14b73152210',
+		jsApiList: [
+			'onMenuShareTimeline',
+			'onMenuShareAppMessage'
+		  ]
+	});
+	wx.ready(function () {
+		var shareData = {
+			title: 'LIFELINE 现代病诊所',	//	标题
+			desc: '诊断你潜在的肥胖可能性',	//	描述
+			link: 'http://www.jnulifeline.com/H5/index.html',	//	分享的URL，必须和当前打开的网页的URL是一样的
+			imgUrl: 'http://www.jnulifeline.com/H5/secrimg.png'	//	缩略图地址
+		};
+		wx.onMenuShareAppMessage(shareData);
+		wx.onMenuShareTimeline(shareData);
+	});
+	wx.error(function (res) {
+	});
+</script>
+-->
+	<style>
+	.share_div{width:0px;height:0px;overflow:hidden;}
+</style>
+
+
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="css/swiper.min.css">
+
+<!-- Demo styles -->
+<style>
+	@media screen and (min-width:500px){
+		#container-pc{
+			position:absolute;
+		width:100%;
+height:100%;
+		float:left;
+		top:0px;
+		margin:0px;
+	padding:0px;
+			
+		z-index: 200;
+			background-color:#E1B2B3;
+		}
+		#container-pc p{
+			font-weight: 200;
+			line-height: 30px;
+			font-size:16px;
+			color:#000;
+			z-index: 201;
+		}
+		.loading,.loadinggif,.leftSlide,.leftSlide2.progress,.progressbar,.progresstext,.swiper-slide,.parallax-bg{
+			visibility: hidden;
+		}
+	}
+	@media screen and (max-width:500px){
+		#container-pc{
+			position:absolute;
+		weight:100%;
+height:100%;
+		float:left;
+		top:0px;
+		margin:0px;
+			left: 0px;
+	padding:0px;
+	display:none;
+		z-index: -200;
+			background-color:#E1B2B3;
+		}
+html, body {
+	position: relative;
+	height: 100%;
+}
+body {
+	background: #eee;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+.swiper-container {
+/*	display: none;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #fed8cd;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+}
+.swiper-slide {
+/*	display: none;*/
+	font-size: 18px;
+	color: #fff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 40px 60px;
+}
+.clickK {
+	position: absolute;
+	left: 200px;
+	top: 300px;/* width: 100%;
+      height: 100%;*/
+}
+
+.clickY {
+	display: none;
+	position: absolute;
+	left: 30px;
+	top: 200px;/* width: 100%;
+      height: 100%;*/
+}
+
+	.leftSlide
+	 {
+	position: absolute;
+	left: 50px;
+	top: 45px;/* width: 100%;
+      height: 100%;*/
+}
+	.leftSlide2{
+	 display: none;
+	position: absolute;
+	left: 5px;
+	bottom: 20px;   
+}
+.parallax-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+
+/*人为制造一个占据整个屏幕的Div,其透明度为0.7且z-index为9999使之前的页面被压在底层无法点击*/
+#fullScreen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0.7;
+	background-color: black;
+	z-index: 99;
+}
+#floatLayerIntro {
+	position: fixed;
+	width: 92%;/*351px;
+/*	height: 506px;*/
+	left: 4%;
+	right: 4%;
+	top: 5%;
+	z-index: 100;
+}
+/*浮层,可随意设置大小宽高，但是z-index必须比上面fullScreen大才能显示出来*/
+#floatLayerQ {
+	position: fixed;
+	width: 92%;
+	left: 4%;
+	right: 4%;/*38px;*/
+	top: 5%;
+	z-index: 100;/
+}
+#floatLayerD {
+	position: fixed;
+	width: 92%;
+	left: 4%;
+	right: 4%;
+	top: 5%;
+	z-index: 100;
+}
+/*浮层,可随意设置大小宽高，但是z-index必须比上面fullScreen大才能显示出来*/
+#floatLayerR {
+	position: fixed;
+	width: 92%;
+	left: 4%;
+	right: 4%;
+	top: 5%;
+	z-index: 100;
+}
+.weidu{
+	position: fixed;
+	z-index: 101
+	}
+.next {
+	position: fixed;
+	left: 63%;
+}
+.next2 {
+	position: fixed;
+	left: 63%;
+}
+.hide {
+	position: fixed;
+	left: 75%;
+}
+.report {
+	position: fixed;
+	left: 55%;
+}
+.answerA {
+	position: fixed;
+	left: 20%;/*101px;*/
+}
+.answerB {
+	position: fixed;
+	left: 20%;/*101px;*/	
+}
+.answerC {
+	position: fixed;
+	left: 20%;/*101px;*/
+}
+.answerD {
+	position: fixed;
+	left: 20%;/*101px;*/
+}
+.answerA2 {
+	position: fixed;
+	left: 7%;
+}
+.answerB2 {
+	position: fixed;
+	left: 7%;
+}
+.answerC2 {
+	position: fixed;
+	left: 7%;
+}
+.answerD2 {
+	position: fixed;
+	left: 7%;
+}
+.answerA3 {
+	position: fixed;
+	left: 25%;
+}
+.answerB3 {
+	position: fixed;
+	left: 25%;
+}
+.answerC3 {
+	position: fixed;
+	left: 25%;
+}
+.answerD3 {
+	position: fixed;
+	left: 25%;
+}
+.answerA4 {
+	position: fixed;
+	left: 15%;
+}
+.answerB4 {
+	position: fixed;
+	left: 15%;
+}
+.answerC4 {
+	position: fixed;
+	left: 15%;
+}
+.answerD4 {
+	position: fixed;
+	left: 15%;
+}
+	}
+</style>
+<style>
+.loading{	
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #fed8cd;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	z-index: 10;
+}
+.loadgif{
+		position: fixed;
+		left: 25%;top: 26%;
+	}
+.progress{
+	width: 60%;
+	height: 3px;
+	border:1px solid #2957ff ;
+	position: absolute;
+	left: 0;top: 26%;;right: 0;bottom: 0;
+	margin:auto;
+	z-index: 10;
+}
+.progressbar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: #cbcbff;
+	-webkit-transition:width ease-in 200ms;
+}
+.progresstext{
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+</style>
+<!--
+	<style>
+    .icon{
+        display: none;
+    }
+</style>
+-->
+</head>
+<body>
+	
+
+<!--
+	 <div class="icon">
+    <img src="secrimg.png">
+</div>
+-->
+
+<!--	<img src="secrimg.png" style="position:absolute; top:0; left:0; visibility:hidden; z-index:-1; ">-->
+<!-- Swiper -->
+	<div id="container-pc">
+		<center><p></br></br></br>扫一扫在手机端打开</br>领取你独一无二的问诊结果</br></br><img src="images/h5QRcode.png" width="20%"></center>
+		</div>
+	<div class="loading">
+		<div class="loadgif"><a><img src="./images/load.gif" width="70%" height="70%"></a></div>
+<div class="progress">
+	<div class="progressbar"></div>
+	<div class="progresstext">
+		<span class="current"></span>
+<!--		<span class="total"></span>-->
+	</div>
+</div>
+		</div>
+	
+
+<div class="swiper-container"> 
+	
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="parallax-bg" style="background-image:url(images/01.jpg)" data-swiper-parallax="-23%"></div>
+      
+      <div class="leftSlide"><a><img src="./images/left.gif" width="75%" height="75%"></a></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="parallax-bg" style="background-image:url(images/02.jpg)" data-swiper-parallax="-23%"></div>    
+
+		<div class="clickK"><a><img src="./images/click.gif" width="25%" height="25%"></a></div>
+		<div class="leftSlide2"><a><img src="./images/left.gif" width="70%" height="70%"></a></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="parallax-bg" style="background-image:url(images/03.jpg)" data-swiper-parallax="-23%"></div>
+    </div>
+	  <div class="swiper-slide">
+      <div class="parallax-bg" style="background-image:url(images/04.jpg)" data-swiper-parallax="-23%"></div>
+
+		<div class="clickY"><a><img src="./images/click.gif" width="20%" height="20%"></a></div>
+    </div>
+    
+   
+  </div>
+</div>
+
+<!-- Swiper JS --> 
+<script src="js/swiper.min.js"></script> 
+<script src="js/question.js"></script> 
+	<script src="js/resLoader.js"></script>
+<!--	<script src="js/match.js"></script>-->
+<!--	<script src="js/PxLoader.js"></script>-->
+	<!-- images -->
+<!--<script src="js/PxLoaderImage.js"></script>-->
+<!-- Initialize Swiper --> 
+<script>
+		function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+    
+    alert(currentdate);
+}
+		</script> 
+	<script>
+		
+var loader = new resLoader({
+	resources : [
+		'images/01.jpg',
+		'images/02.jpg',
+		'images/03.jpg',
+		'images/04.jpg',
+		'images/1A-8.png',
+		'images/1B-8.png',
+		'images/1C-8.png',
+		'images/1D-8.png',
+		'images/2A-8.png',
+		'images/2B-8.png',
+		'images/2C-8.png',
+		'images/2D-8.png',
+		'images/3A-8.png',
+		'images/3B-8.png',
+		'images/3C-8.png',
+		'images/3D-8.png',
+		'images/4A-8.png',
+		'images/4B-8.png',
+		'images/4C-8.png',
+		'images/4D-8.png',
+		'images/5A-8.png',
+		'images/5B-8.png',
+		'images/5C-8.png',
+		'images/5D-8.png',	
+		'images/2-1A-8.png',
+		'images/2-1B-8.png',
+		'images/2-1C-8.png',
+		'images/2-1D-8.png',
+		'images/2-2A-8.png',
+		'images/2-2B-8.png',
+		'images/2-2C-8.png',
+		'images/2-2D-8.png',
+		'images/2-3A-8.png',
+		'images/2-3B-8.png',
+		'images/2-3C-8.png',
+		'images/2-3D-8.png',
+		'images/2-4A-8.png',
+		'images/2-4B-8.png',
+		'images/2-4C-8.png',
+		'images/2-4D-8.png',
+		'images/2-5A-8.png',
+		'images/2-5B-8.png',
+		'images/2-5C-8.png',
+		'images/2-5D-8.png',
+		'images/1bg-8.png',
+		'images/2bg-8.png',
+		'images/3bg-8.png',
+		'images/4bg-8.png',
+		'images/5bg-8.png',
+		'images/2-1bg-8.png',
+		'images/2-2bg-8.png',
+		'images/2-3bg-8.png',
+		'images/2-4bg-8.png',
+		'images/2-5bg-8.png',
+		'images/click.gif',
+		'images/report.gif',
+		'images/go.gif',
+		'images/left.gif',
+		'images/close.png',
+		'images/koubg-8.png',
+		'images/koud.png',
+		'images/zhengbg-8.png',
+		'images/zhengd.png',
+		'images/r1-8.png',
+		'images/r2-8.png',
+		'images/r3-8.png',
+		'images/r4-8.png',
+		'images/r5-8.png',
+//		'images/high1-8.png',
+//		'images/high2-8.png',
+//		'images/high3-8.png',
+//		'images/high4-8.png',
+//		'images/high5-8.png',
+//		'images/low1-8.png',
+//		'images/low2-8.png',
+//		'images/low3-8.png',
+//		'images/low4-8.png',
+//		'images/low5-8.png',
+//		'images/5high-8.png',
+//		'images/5low-8.png',
+//		'images/5mid-8.png',
+//		'images/high12-8.png',
+//		'images/high13-8.png',
+//		'images/high14-8.png',
+//		'images/high15-8.png',
+//		'images/high23-8.png',
+//		'images/high24-8.png',
+//		'images/high25-8.png',
+//		'images/high34-8.png',
+//		'images/high35-8.png',
+//		'images/high45-8.png',
+//		'images/low12-8.png',
+//		'images/low13-8.png',
+//		'images/low14-8.png',
+//		'images/low15-8.png',
+//		'images/low23-8.png',
+//		'images/low24-8.png',
+//		'images/low25-8.png',
+//		'images/low34-8.png',
+//		'images/low35-8.png',
+//		'images/low45-8.png',
+//		'images/2-high1-8.png',
+//		'images/2-high2-8.png',
+//		'images/2-high3-8.png',
+//		'images/2-high4-8.png',
+//		'images/2-high5-8.png',
+//		'images/2-low1-8.png',
+//		'images/2-low2-8.png',
+//		'images/2-low3-8.png',
+//		'images/2-low4-8.png',
+//		'images/2-low5-8.png',
+//		'images/2-5high-8.png',
+//		'images/2-5low-8.png',
+//		'images/2-5mid-8.png',
+//		'images/2-high12-8.png',
+//		'images/2-high13-8.png',
+//		'images/2-high14-8.png',
+//		'images/2-high15-8.png',
+//		'images/2-high23-8.png',
+//		'images/2-high24-8.png',
+//		'images/2-high25-8.png',
+//		'images/2-high34-8.png',
+//		'images/2-high35-8.png',
+//		'images/2-high45-8.png',
+//		'images/2-low12-8.png',
+//		'images/2-low13-8.png',
+//		'images/2-low14-8.png',
+//		'images/2-low15-8.png',
+//		'images/2-low23-8.png',
+//		'images/2-low24-8.png',
+//		'images/2-low25-8.png',
+//		'images/2-low34-8.png',
+//		'images/2-low35-8.png',
+//		'images/2-low45-8.png',
+	],
+	onStart : function(total){
+		console.log('start:'+total);
+	},
+	onProgress : function(current, total){
+		console.log(total);
+		var percent = Math.round(current/total*100);
+		$('.progressbar').css('width', percent+'%');
+		$('.progresstext .current').text(percent+'%');
+//		$('.progresstext .total').text('100%');
+	},
+	onComplete : function(total){
+//		alert('加载完毕:'+total+'个资源');
+
+
+$(function () {
+
+    setTimeout(function () {
+		$('.loading').css('visibility', 'hidden');
+//        $('.swiper-wrapper').css('display', 'block'); 
+//		$('.swiper-slide').css('display', 'block'); 
+    }, 1000);
+	
+})
+
+
+					
+	}
+});
+
+loader.start();
+
+
+		</script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+//      direction: 'vertical',
+		direction: 'horizontal',
+      slidesPerView: 'auto',
+      freeMode: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      mousewheel: true,
+    });
+  </script>
+	
+
+	
+</body>
+</html>
